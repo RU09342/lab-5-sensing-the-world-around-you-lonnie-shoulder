@@ -94,11 +94,22 @@ int main(void)
     WDTCTL = WDTPW | WDTHOLD;               // Stop WDT
 
     PJSEL0 = BIT4 | BIT5;                   // For LFXT
-
+    P2SEL0 |= BIT0 | BIT1;                    // USCI_A0 UART operation
+    P2SEL1 &= ~(BIT0 | BIT1);
     P1OUT &= ~BIT0;                           // Clear LED to start
     P1DIR |= BIT0;                            // P1.0 output
     P9SEL1 |= BIT4;                           // Configure P1.1 for ADC
     P9SEL0 |= BIT4;
+
+    //Configure UART
+    UCA0CTL1 |= UCSWRST;                      // **Put state machine in reset**
+    UCA0CTL1 |= UCSSEL_2;                     // SMCLK
+    UCA0BR0 = 6;                              // 1MHz 9600 (see User's Guide)
+    UCA0BR1 = 0;                              // 1MHz 9600
+    UCA0MCTLW = UCBRF_13 + UCOS16;   // Modln UCBRSx=0, UCBRFx=0,                                                  // over sampling
+    UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
+    UCA0IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
+
 
     // Configure ADC12
     ADC12CTL0 = ADC12SHT0_2 | ADC12ON;      // Sampling time, S&H=16, ADC12 on
@@ -115,7 +126,6 @@ int main(void)
             __bis_SR_register(LPM0_bits | GIE); // LPM0, ADC12_ISR will force exit
             __no_operation();                   // For debugger
     }
-
 
     __bis_SR_register(LPM3_bits | GIE);
     __no_operation();
@@ -170,33 +180,43 @@ void __attribute__ ((interrupt(ADC12_VECTOR))) ADC12_ISR (void)
                     tmp = t;
                     if(tmp == 1){
                         showChar('1',j+1);
+                        UCA0TXBUF = 1;
                         break;
                     }else if(tmp == 2){
                         showChar('2',j+1);
+                        UCA0TXBUF = 2;
                         break;
                     }else if(tmp == 3){
                         showChar('3',j+1);
+                        UCA0TXBUF = 3;
                         break;
                     }else if(tmp == 4){
                         showChar('4',j+1);
+                        UCA0TXBUF = 4;
                         break;
                     }else if(tmp == 5){
                         showChar('5',j+1);
+                        UCA0TXBUF = 5;
                         break;
                     }else if(tmp == 6){
                         showChar('6',j+1);
+                        UCA0TXBUF = 6;
                         break;
                     }else if(tmp == 7){
                         showChar('7',j+1);
+                        UCA0TXBUF = 7;
                         break;
                     }else if(tmp == 8){
                         showChar('8',j+1);
+                        UCA0TXBUF = 8;
                         break;
                     }else if(tmp == 9){
                         showChar('9',j+1);
+                        UCA0TXBUF = 9;
                         break;
                     }else{
                         showChar('0',j+1);
+                        UCA0TXBUF = 0;
                         break;
                     }
                 }
