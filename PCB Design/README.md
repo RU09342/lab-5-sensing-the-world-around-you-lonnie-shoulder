@@ -1,7 +1,7 @@
 # PCB Breakout Board
 In this lab a PCB breakout board with reset circuitry was designed. This circuit was drawn in the schematic editor in diptrace, then the pcb was designed with the PCB editor. Only one component had to be drawn in the component editor, this was the MSP430FR2311IPW20R. 
 
-![solarized palette](MSP430BreakoutSchematic.PNG)
+![Breakout Schematic](MSP430BreakoutSchematic.PNG "MSP430 Breakout Schematic")
 # PCB Design
 Since we are getting closer to building realistic systems in your final projects, you will most likely need to build a PCB so that you are not worrying about carrying around a rat's nest of wires. Really, the basics of PCB design are quite simple: make a schematic to lay out what components need to be connected to each other, then import the schematic to a PCB designer and physically connect the components together. Where the difficulty comes in is in the tedium. For low-frequency, low power applications, you should be able to get away with pretty much anything you do. 
 
