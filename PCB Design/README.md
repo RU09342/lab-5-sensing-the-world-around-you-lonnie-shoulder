@@ -9,7 +9,14 @@ The PCB was designed with reset circuitry, two headers, and a MSP430FR2311. The 
 ![Breakout PCB](MSP430FR2311PCB.PNG "MSP430 Breakout PCB")
 
 ## ```Bill of Materials```
-The README for this folder should also contain the Bill of Materials as well as (if possible) a link to a Digikey/Mouser cart that contains the parts you would want for this board.
+* MSP430FR2311IPW20R
+* Header Pins 2 x 10
+* 10uF CAP_0805 
+* 100nF CAP_0805
+* 1nF CAP_0805
+* 47kOhm RES_0805
+
+The complete digikey cart can be seen in the text file in this folder.
 
 ## List of Files and Folders 
 This folder should contain the following files:
@@ -17,4 +24,5 @@ This folder should contain the following files:
 * BOARD.pcb
 * Schematic.PNG
 * PCB.PNG
+*DigikeyCart.txt
 * GERBERS (Folder)
