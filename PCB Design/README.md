@@ -8,7 +8,7 @@ The PCB was designed with reset circuitry, two headers, and a MSP430FR2311. The 
 
 ![Breakout PCB](MSP430FR2311PCB.PNG "MSP430 Breakout PCB")
 
-## ```Bill of Materials```
+## Bill of Materials
 * MSP430FR2311IPW20R
 * Header Pins 2 x 10
 * 10uF CAP_0805 
