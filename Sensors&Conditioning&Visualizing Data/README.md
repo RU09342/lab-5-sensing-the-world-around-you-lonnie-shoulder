@@ -7,8 +7,10 @@ To read this data into your microcontroller, we must use the ADC. To make sure t
 ![equation](http://latex.codecogs.com/gif.latex?%5Cfrac%7B3.3%7D%7B2%5E%7Bx%7D%7D) volts. 
 So in a 12 bit ADC each bit is 0.000805 volts and in a 10 bit ADC each bit is 0.0032 volts.
 
+# Visualizing Data
+## LCD
 
-
+## UART
 
 
 # Sensors and Signal Conditioning
