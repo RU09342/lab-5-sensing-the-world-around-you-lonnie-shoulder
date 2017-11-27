@@ -123,12 +123,12 @@ void __attribute__ ((interrupt(USCI_A0_VECTOR))) USCI_A0_ISR (void)
   {
     case USCI_NONE: break;
     case USCI_UART_UCRXIFG:
-      while(!(UCA0IFG&UCTXIFG));
-      UCA0TXBUF = UCA0RXBUF;
+      while(!(UCA0IFG&UCTXIFG));		// While neither flag is set
+      UCA0TXBUF = UCA0RXBUF;			// echo recieve buffer to transmit buffer
       __no_operation();
       break;
-    case USCI_UART_UCTXIFG: break;
-    case USCI_UART_UCSTTIFG: break;
-    case USCI_UART_UCTXCPTIFG: break;
+    case USCI_UART_UCTXIFG: break;		//ignore flag
+    case USCI_UART_UCSTTIFG: break;		//ignore flag		
+    case USCI_UART_UCTXCPTIFG: break;	//ignore flag
   }
 }

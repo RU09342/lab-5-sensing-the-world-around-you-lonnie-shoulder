@@ -56,17 +56,17 @@ void __attribute__ ((interrupt(ADC_VECTOR))) ADC_ISR (void)
 {
     switch(__even_in_range(ADCIV,ADCIV_ADCIFG))
     {
-        case ADCIV_NONE:
+        case ADCIV_NONE:			//ignore flag
             break;
-        case ADCIV_ADCOVIFG:
+        case ADCIV_ADCOVIFG:		//ignore flag
             break;
-        case ADCIV_ADCTOVIFG:
+        case ADCIV_ADCTOVIFG:		//ignore flag
             break;
-        case ADCIV_ADCHIIFG:
+        case ADCIV_ADCHIIFG:		//ignore flag
             break;
-        case ADCIV_ADCLOIFG:
+        case ADCIV_ADCLOIFG:		//ignore flag
             break;
-        case ADCIV_ADCINIFG:
+        case ADCIV_ADCINIFG:		//ignore flag
             break;
         case ADCIV_ADCIFG:
             if (ADCMEM0 < 0x155)                             // ADCMEM = A0 < 0.5V?
