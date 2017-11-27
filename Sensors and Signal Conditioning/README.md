@@ -1,4 +1,17 @@
 # Sensors and Signal Conditioning
+
+## Sensing Light Intensity
+In this lab 3 sensors are utilized, phototransistor, photodiode, and photoressistor. The phototransistor generates different currents based on different light intensities. The photodiode generates different voltages based on the light intensities, and photoressistors generate different resistances based on the the light intensity. The circuits for these sensors can be seen bellow.
+
+To read this data into your microcontroller, we must use the ADC. To make sure that the voltage is not too high or too low it can be amplified and then it will be passed into the ADC. The ADC works by comparing the voltage on the input pin to a voltage of 3.3 volts. The percision of the ADC is
+![equation](http://latex.codecogs.com/gif.latex?%5Cfrac%7B3.3%7D%7B2%5E%7Bx%7D%7D) volts. 
+So in a 12 bit ADC each bit is 0.000805 volts and in a 10 bit ADC each bit is 0.0032 volts.
+
+
+
+
+
+# Sensors and Signal Conditioning
 One of the biggest limitations of the microcontroller is the fact that it lives in a digital world. We need certain components to be able to translate the analog world to the digital world and vice-versa. In this lab, we need to be able to convert some electrical phenomena into something our microcontroller can understand. For this, we need a few building blocks to do this.
 
 ## Sensors
