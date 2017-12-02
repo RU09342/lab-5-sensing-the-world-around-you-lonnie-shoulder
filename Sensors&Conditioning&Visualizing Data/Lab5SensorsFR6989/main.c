@@ -161,8 +161,8 @@ void __attribute__ ((interrupt(ADC12_VECTOR))) ADC12_ISR (void)
                 unsigned int i;
                 unsigned int tmp;
                 float t;
-                for(j = 0; j < 4; j ++){
-                for(i = 0; i <= 9; i ++){
+                for(j = 0; j < 4; j ++){	//seperating each digit of value
+                for(i = 0; i <= 9; i ++){	//Sends proper value to Transmiswsion buffer to be displayed
                     if(j == 0){
                         t = value;
                         tmp = t;

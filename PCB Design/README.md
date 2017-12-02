@@ -24,5 +24,5 @@ This folder should contain the following files:
 * BOARD.pcb
 * Schematic.PNG
 * PCB.PNG
-*DigikeyCart.txt
+* DigikeyCart.txt
 * GERBERS (Folder)
